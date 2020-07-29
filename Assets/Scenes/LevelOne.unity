@@ -533,6 +533,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c595ab546c3e284b8d75cec43b43bd2, type: 3}
+--- !u!1001 &6258778759998675133
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7204541481506451585, guid: aa0e887643e2d8c4b9cdb549618414cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204541481506451585, guid: aa0e887643e2d8c4b9cdb549618414cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204541481506451585, guid: aa0e887643e2d8c4b9cdb549618414cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204541481506451585, guid: aa0e887643e2d8c4b9cdb549618414cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204541481506451585, guid: aa0e887643e2d8c4b9cdb549618414cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204541481506451585, guid: aa0e887643e2d8c4b9cdb549618414cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204541481506451585, guid: aa0e887643e2d8c4b9cdb549618414cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204541481506451585, guid: aa0e887643e2d8c4b9cdb549618414cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204541481506451585, guid: aa0e887643e2d8c4b9cdb549618414cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204541481506451585, guid: aa0e887643e2d8c4b9cdb549618414cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204541481506451585, guid: aa0e887643e2d8c4b9cdb549618414cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884109847808468666, guid: aa0e887643e2d8c4b9cdb549618414cd,
+        type: 3}
+      propertyPath: m_Name
+      value: LaserShredder
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa0e887643e2d8c4b9cdb549618414cd, type: 3}
 --- !u!1001 &8015112973747755112
 PrefabInstance:
   m_ObjectHideFlags: 0
