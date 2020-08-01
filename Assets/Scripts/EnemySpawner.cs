@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
 
     [SerializeField] List<WaveConfig> waveConfigs;
-    int startingWave = 0;
+    int startingWave = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +19,14 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnAllEnemiesInWave(WaveConfig waveconfig)
     {
         for (
-            int enemyCount = 0; 
-            enemyCount <= waveconfig.GetNumberOfEnemies();
+            int enemyCount = 0; enemyCount <= waveconfig.GetNumberOfEnemies();
             enemyCount++) 
         {
-            Instantiate(waveconfig.GetEnemyPrefab(), waveconfig.GetWaypoints()[0].transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(
-                waveconfig.GetTimeBetweenSpawn()
-                );
+            var newEnemy = Instantiate(waveconfig.GetEnemyPrefab(), waveconfig.GetWaypoints()[0].transform.position, Quaternion.identity);
+
+            newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveconfig);
+
+            yield return new WaitForSeconds(waveconfig.GetTimeBetweenSpawn());
         }
 
 
