@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
         ProcessHit(damageDealer);
+        Destroy(other.gameObject);
+
     }
 
     private void ProcessHit(DamageDealer damageDealer)
@@ -32,4 +34,6 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
 }
