@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2915921423065054315}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,3 +96,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   playerlaser: {fileID: 0}
+  projectileFiringPeriod: 0.1
