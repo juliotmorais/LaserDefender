@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
     [SerializeField] GameObject enemylaser;
+    [SerializeField] GameObject enemyexplosion;
     float projectileSpeed = 10f;
 
 
@@ -44,11 +45,14 @@ public class Enemy : MonoBehaviour
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
     }
 
+    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             Destroy(other.gameObject);
+            Explode();
         }
         else
         {
@@ -65,9 +69,19 @@ public class Enemy : MonoBehaviour
         damageDealer.Hit();
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
+            Explode();
         }
     }
 
+    private void Die()
+    {
+        Destroy(gameObject);
+    }
 
+    private void Explode()
+    {
+        GameObject explosion = Instantiate(enemyexplosion, transform.position, transform.rotation);
+        Destroy(explosion, 1f);
+    }
 }

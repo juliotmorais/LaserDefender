@@ -98,6 +98,8 @@ MonoBehaviour:
   moveSpeed: 10
   padding: 1
   health: 200
+  playerexplosion: {fileID: 4492552992308312630, guid: 9c8d13d73245d1248a177f52318f5504,
+    type: 3}
   playerlaser: {fileID: 992197939450625845, guid: 5163691e14bf99c4d838847eccc2a151,
     type: 3}
   projectileSpeed: 10

@@ -9,12 +9,12 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 1f;
     [SerializeField] int health =200;
+    [SerializeField] GameObject playerexplosion;
 
     [Header("Projectile")]
     [SerializeField] GameObject playerlaser;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.1f;
-
 
 
 
@@ -92,6 +92,7 @@ public class Player : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Destroy(other.gameObject);
+            Explode();
         }
         else
         {
@@ -109,8 +110,20 @@ public class Player : MonoBehaviour
         damageDealer.Hit();
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
+            Explode();
         }
+    }
+    private void Die()
+    {
+        Destroy(gameObject);
+        
+    }
+
+    private void Explode()
+    {
+        GameObject explosion = Instantiate(playerexplosion, transform.position, transform.rotation);
+        Destroy(explosion, 1f);
     }
 
 
