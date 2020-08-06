@@ -100,6 +100,9 @@ MonoBehaviour:
   health: 200
   playerexplosion: {fileID: 4492552992308312630, guid: 9c8d13d73245d1248a177f52318f5504,
     type: 3}
+  deathSound: {fileID: 8300000, guid: 4bee04e2c01ddc347802a6bb835a40f5, type: 3}
+  laserSound: {fileID: 8300000, guid: 2cb69951dcd818e4a80be3630096d094, type: 3}
+  SoundVolume: 0.5
   playerlaser: {fileID: 992197939450625845, guid: 5163691e14bf99c4d838847eccc2a151,
     type: 3}
   projectileSpeed: 10

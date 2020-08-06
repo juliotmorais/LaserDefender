@@ -6,14 +6,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
+    [Header("Player Movement")]
     [SerializeField] float health = 100;
+    [Header("Player Stats")]
+    [SerializeField] GameObject enemyexplosion;
+    [SerializeField] AudioClip deathSound;
+    [Header("Player Sounds")]
+    [SerializeField] AudioClip laserSound;
+    [SerializeField] [Range(0, 1)] float SoundVolume = 0.5f;
+    [Header("Laser Related")]
+    [SerializeField] GameObject enemylaser;
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
-    [SerializeField] GameObject enemylaser;
-    [SerializeField] GameObject enemyexplosion;
-    float projectileSpeed = 10f;
+    [SerializeField] float projectileSpeed = 10f;
+
+
+
+
+
 
 
     // Start is called before the first frame update
@@ -43,6 +54,7 @@ public class Enemy : MonoBehaviour
     {
         GameObject laser = Instantiate(enemylaser, transform.position, Quaternion.identity) as GameObject;
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+        PlayLaserSound();
     }
 
     
@@ -82,6 +94,17 @@ public class Enemy : MonoBehaviour
     private void Explode()
     {
         GameObject explosion = Instantiate(enemyexplosion, transform.position, transform.rotation);
+        PlayDeathSound();
         Destroy(explosion, 1f);
+
+    }
+
+    private void PlayDeathSound()
+    {
+        AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, SoundVolume);
+    }
+    private void PlayLaserSound()
+    {
+        AudioSource.PlayClipAtPoint(laserSound, Camera.main.transform.position, SoundVolume);
     }
 }

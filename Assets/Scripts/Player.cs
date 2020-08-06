@@ -5,16 +5,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Header("Player")]
+    [Header("Player Movement")]
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 1f;
-    [SerializeField] int health =200;
+    [Header("Player Stats")]
+    [SerializeField] int health = 200;
     [SerializeField] GameObject playerexplosion;
-
-    [Header("Projectile")]
+    [Header("Player Sounds")]
+    [SerializeField] AudioClip deathSound;
+    [SerializeField] AudioClip laserSound;
+    [SerializeField] [Range(0, 1)] float SoundVolume = 0.5f;
+    [Header("Laser Related")]
     [SerializeField] GameObject playerlaser;
     [SerializeField] float projectileSpeed = 10f;
-    [SerializeField] float projectileFiringPeriod = 0.1f;
+    [SerializeField] float projectileFiringPeriod = 0.5f;
 
 
 
@@ -82,7 +86,7 @@ public class Player : MonoBehaviour
         {
             GameObject laser = Instantiate(playerlaser, transform.position, Quaternion.identity) as GameObject;
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
-
+            PlayLaserSound();
             yield return new WaitForSeconds(projectileFiringPeriod);
         }
     }
@@ -124,7 +128,15 @@ public class Player : MonoBehaviour
     {
         GameObject explosion = Instantiate(playerexplosion, transform.position, transform.rotation);
         Destroy(explosion, 1f);
+        PlayDeathSound();
     }
-
+    private void PlayDeathSound()
+    {
+        AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, SoundVolume);
+    }
+    private void PlayLaserSound()
+    {
+        AudioSource.PlayClipAtPoint(laserSound, Camera.main.transform.position, SoundVolume);
+    }
 
 }
