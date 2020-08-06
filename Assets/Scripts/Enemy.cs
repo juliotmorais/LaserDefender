@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.tag = "Enemy";
         shotCounter = UnityEngine.Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
     }
 
@@ -45,8 +46,16 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
-        ProcessHit(damageDealer);
+        if (other.tag == "Player")
+        {
+            Destroy(other.gameObject);
+        }
+        else
+        {
+
+            DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+            ProcessHit(damageDealer);
+        }
 
     }
 

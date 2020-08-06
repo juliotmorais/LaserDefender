@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.tag = "Player";
         SetUpMovementBoundaries();
         
     }
@@ -88,9 +89,17 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
-        if (!damageDealer) { return; }
-        ProcessHit(damageDealer);
+        if (other.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
+        }
+        else
+        {
+
+            DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+            if (!damageDealer) { return; }
+            ProcessHit(damageDealer);
+        }
 
     }
 
