@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -129,6 +130,7 @@ public class Player : MonoBehaviour
         GameObject explosion = Instantiate(playerexplosion, transform.position, transform.rotation);
         Destroy(explosion, 1f);
         PlayDeathSound();
+        FindObjectOfType<SceneLoader>().LoadLoseScene();
     }
     private void PlayDeathSound()
     {
