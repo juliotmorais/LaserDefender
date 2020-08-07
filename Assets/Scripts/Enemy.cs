@@ -6,11 +6,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Player Movement")]
+    [Header("Enemy Movement")]
     [SerializeField] float health = 100;
-    [Header("Player Stats")]
+    [Header("Enemy Stats")]
     [SerializeField] GameObject enemyexplosion;
     [SerializeField] AudioClip deathSound;
+    [SerializeField] int points = 150;
     [Header("Player Sounds")]
     [SerializeField] AudioClip laserSound;
     [SerializeField] [Range(0, 1)] float SoundVolume = 0.5f;
@@ -89,6 +90,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+        FindObjectOfType<GameSession>().AddToScore(points);
     }
 
     private void Explode()
