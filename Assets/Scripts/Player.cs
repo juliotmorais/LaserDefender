@@ -97,6 +97,7 @@ public class Player : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Destroy(other.gameObject);
+            health = 0;
             Explode();
         }
         else
@@ -139,6 +140,11 @@ public class Player : MonoBehaviour
     private void PlayLaserSound()
     {
         AudioSource.PlayClipAtPoint(laserSound, Camera.main.transform.position, SoundVolume);
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 
 }
