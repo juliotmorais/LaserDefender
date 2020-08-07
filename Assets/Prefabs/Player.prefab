@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   padding: 1
-  health: 200
+  health: 500
   playerexplosion: {fileID: 4492552992308312630, guid: 9c8d13d73245d1248a177f52318f5504,
     type: 3}
   deathSound: {fileID: 8300000, guid: 4bee04e2c01ddc347802a6bb835a40f5, type: 3}

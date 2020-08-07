@@ -109,17 +109,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9841c83189b2d7044b5f92b4592a7fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  shotCounter: 0
-  minTimeBetweenShots: 0.2
-  maxTimeBetweenShots: 3
-  enemylaser: {fileID: 8815436273201484685, guid: 56bdcce21c209c942acd111f5f771cf9,
-    type: 3}
+  health: 200
   enemyexplosion: {fileID: 4492552992308312630, guid: 9c8d13d73245d1248a177f52318f5504,
     type: 3}
   deathSound: {fileID: 8300000, guid: 4bee04e2c01ddc347802a6bb835a40f5, type: 3}
+  points: 250
   laserSound: {fileID: 8300000, guid: d14d2f1ab09c0d746b43ca997c1bf993, type: 3}
   SoundVolume: 0.5
+  enemylaser: {fileID: 8815436273201484685, guid: 56bdcce21c209c942acd111f5f771cf9,
+    type: 3}
+  shotCounter: 0
+  minTimeBetweenShots: 0.2
+  maxTimeBetweenShots: 3
   projectileSpeed: 10
 --- !u!58 &-1222120521067995119
 CircleCollider2D:
